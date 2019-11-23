@@ -2,13 +2,14 @@
 #define GRAY  1
 #define BLACK 2
 using namespace std;
+constexpr size_t MAIN_SIZE = 64;
 
 struct basic_vertex {
     int x;
     int used;
     vector<Vertex *> neibh;
     basic_vertex(int a) : x(a), used(WHITE)
-        { neibh.reserve(64); }
+        { neibh.reserve(MAIN_SIZE); }
 };
 
 class Vertex : public basic_vertex {
