@@ -27,5 +27,5 @@ void dfs(basic_vertex *v) {
     v->used = BLACK;
     for (Vertex * &u : v->neibh)
         if (u->used = WHITE)
-   			    dfs(u);
+            dfs(u);
 }
