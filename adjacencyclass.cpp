@@ -46,7 +46,7 @@ void remove_or(basic_vertex *a, basic_vertex *b) {
     a->neibh.erase(find(a->neibh.begin(), a->neibh.end(), b));
 }
 
-bool has_cycle(basic_v *v)
+bool has_cycle(basic_vertex *v)
 {
     v->used = GRAY;
     for (auto &u : v->neibh) {
