@@ -18,6 +18,7 @@ struct Graph {
         n = _n;
         g = vector<vector<int>>(n);
         used = vector<int>(n);
+        dist = vector<int>(n);
     }
     Graph(int _n, bool w, bool po, bool br) {
         n = _n;
@@ -59,17 +60,17 @@ void Graph::dfs(int v) {
 }
 
 void Graph::bfs(int s) {
-    d[s] = 0;
+    dist[s] = 0;
     queue<int> q;
     q.push(s);
     while (!q.empty()) {
         int v = q.front();
         q.pop();
         for (int u : g[v])
-            if (d[u] == INT_MAX) {
-                d[u] = d[v] + 1;
+            if (dist[u] == INT_MAX) {
+                dist[u] = dist[v] + 1;
                 q.push(u);
-            }            
+            }
     }        
 }
 
