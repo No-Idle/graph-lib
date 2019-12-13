@@ -21,13 +21,13 @@ struct Graph {
         n = _n;
         g = vector<vector<int>>(n);
         used = vector<int>(n);
-        dist = vector<int>(n);
+        dist = vector<int>(n, INT_MAX);
     }
     Graph(int _n, bool w, bool po, bool br) {
         n = _n;
         g = vector<vector<int>>(n);
         used = vector<int>(n);
-        dist = vector<int>(n);
+        dist = vector<int>(n, INT_MAX);
         if (w) ways = vector<vector<int>>(n);
         if (po) points = vector<bool>(n);
         if (br) bridges = vector<bool>(n);
@@ -35,6 +35,10 @@ struct Graph {
     void clearused() {
         used.clear();
         used = vector<int>(n);
+    }
+    void cleardist() {
+        dist.clear();
+        dist = vector<int>(n);
     }
     void addNDir(int v, int u) {
         g[v].push_back(u);
