@@ -4,9 +4,12 @@ using namespace std;
 #define GRAY  1
 #define WHITE 0
 
+#define vertex first
+#define weight second
 struct Graph {
     int n;
     vector<vector<int>> g;
+    vector<vector< pair<int, int> >> gw;
     vector<int> used;
 
     vector<int> dist;
