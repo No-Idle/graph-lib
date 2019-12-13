@@ -81,3 +81,12 @@ void Graph::bfs(int s) {
     }        
 }
 
+void readGr(Graph &g) {
+    int n, m;
+    cin >> n >> m;
+    g = Graph(n);
+    for (int i = 0, a, b; i < m; i++) {
+        cin >> a >> b;
+        g.addDir(a, b);
+    }
+}
