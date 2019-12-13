@@ -108,8 +108,6 @@ void Graph::find_bridges(int v, int pr = -1) {
         up[v] = min(up[v], up[to]);
     }
     if (up[v] == depth[v] && pr != -1) {
-        if (pr < v)
-            swap(pr, v);
         ans.push_back({v, pr});
     }
 }
