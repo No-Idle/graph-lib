@@ -37,10 +37,10 @@ struct Graph {
         dist.clear();
         dist = vector<int>(n);
     }
-    void addNDir(int v, int u) {
+    void addDir(int v, int u) {
         g[v].push_back(u);
     }
-    void addDir(int v, int u) {
+    void addNDir(int v, int u) {
         g[v].push_back(u);
         g[u].push_back(v);    
     }
@@ -84,7 +84,7 @@ void readGr(Graph &g) {
     g = Graph(n);
     for (int i = 0, a, b; i < m; i++) {
         cin >> a >> b;
-        g.addDir(a, b);
+        g.addNDir(a, b);
     }
 }
 
