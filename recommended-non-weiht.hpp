@@ -9,7 +9,6 @@ using namespace std;
 struct Graph {
     int n;
     vector<vector<int>> g;
-    vector<vector< pair<int, int> >> gw;
     vector<int> used;
 
     vector<int> dist;
