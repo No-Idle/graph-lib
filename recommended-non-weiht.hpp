@@ -50,7 +50,6 @@ struct Graph {
     void find_bridges(int);
     void points_con(int);
     void djiksta(int, int);
-    void floyd(int, int);
     void condense(int);
     bool hascycle();
     int  shortestcycle();
