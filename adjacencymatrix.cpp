@@ -1,3 +1,34 @@
+void floyd(int **, int);
+
+class AdjMatrix {
+    private:
+        void operator = (const AdjMatrix &)
+            {}
+    public:
+        int **g;
+        int n;
+        AgjMatrix(int _n) {
+            n = _n;
+            g = new int*[n];
+            for (int i = 0; i < n; i++)
+                g[i] = new int[n];
+        }
+        ~AdjMatrix() {
+            for (int i = 0; i < n; i++)
+                delete[] g[i];
+            delete[] g;
+        }
+
+        void floyd()
+        /**
+         * if you want to save original weights, you should copy the graph
+         */
+        {
+            floyd(g, n);
+        }
+    
+};
+
 
 void floyd(int **g, int n)
 /**
