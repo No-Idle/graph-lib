@@ -2,6 +2,7 @@
 void floyd(int **g, int n)
 /**
  * g - adjacency matrix, n - vertex count
+ * each edge of type 'i to i' has 0-weight 
  */
 {
     for (int k = 0; k < n; k++)
