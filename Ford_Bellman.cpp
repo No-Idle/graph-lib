@@ -10,6 +10,7 @@ struct Edge{
     }
  
 };
+
 void Ford_Bellman() {
     int n, m;
     cin >> n >> m;
