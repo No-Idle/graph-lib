@@ -49,7 +49,6 @@ struct Graph {
     void bfs(int);
     void find_bridges(int);
     void points_con(int);
-    void djiksta(int, int);
     void condense(int);
     bool hascycle();
     int  shortestcycle();
