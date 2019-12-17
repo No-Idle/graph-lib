@@ -8,6 +8,8 @@ class AdjMatrix {
         int **g;
         int n;
         AgjMatrix(int _n) {
+            if (_n > 20000) // very rarely you have more than 512MB
+                throw exception("'_n' is too large for matrix creating!");
             n = _n;
             g = new int*[n];
             for (int i = 0; i < n; i++)
@@ -18,7 +20,7 @@ class AdjMatrix {
                 delete[] g[i];
             delete[] g;
         }
-
+    
         void floyd()
         /**
          * if you want to save original weights, you should copy the graph
@@ -40,4 +42,24 @@ void floyd(int **g, int n)
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 g[i][j] = min(g[i][j], g[i][k] + g[k][j]);
+}
+
+void readAdjMatOr(AdjMatrix &g) {
+    int n;
+    cin >> n;
+    g = AgjMatrix(n);
+    for (int i = 0, a, b, w; i < n; i++) {
+        cin >> a >> b >> w;
+        g.g[a][b] = w;
+    }
+}
+
+void readAdjMatNOr(AdjMatrix &g) {
+    int n;
+    cin >> n;
+    g = AgjMatrix(n);
+    for (int i = 0, a, b, w; i < n; i++) {
+        cin >> a >> b >> w;
+        g.g[a][b] = g.g[b][a] = w;
+    }
 }
