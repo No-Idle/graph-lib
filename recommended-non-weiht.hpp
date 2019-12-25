@@ -108,3 +108,24 @@ void Graph::find_bridges(int v, int pr = -1) {
         ans.push_back({v, pr});
     }
 }
+/** TODO: move following function to the class */
+vector<int> ans;
+void ts_dfs(int v) {
+    used[v] = GRAY;
+    for (auto u : g[v]) {
+        if (g[u] == 1)
+            throw std::exception("Graph with cycles!");
+        if (g[u] == 0)
+            ts_dfs(u);
+    }
+    used[v] = BLACK;
+    ans.push_bach(v);
+}
+
+void topsort() {
+    for (int i = 0; i < n; i++) 
+        if (!used[i])
+            ts_dfs(i);
+    for (int i = 0; i < ans.size() / 2; i++)
+        swap(ans[i], ans[ans.size() - i - 1]);
+}
