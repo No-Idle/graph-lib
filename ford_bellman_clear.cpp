@@ -20,7 +20,7 @@ bool fordBellman(vector<int> &d, int start, const vector<edge> &edges)
     d[start] = 0;
 
     for (int i = 0; i < n; i++)
-        for (edge E : edges) // E = (u, v)
+        for (const edge &E : edges) // E = (u, v)
             if (d[E.v] > d[E.u] + E.w)
                 d[E.v] = d[E.u] + E.w;
 
