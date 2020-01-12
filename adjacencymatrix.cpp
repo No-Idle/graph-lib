@@ -44,6 +44,20 @@ void floyd(int **g, int n)
                 g[i][j] = min(g[i][j], g[i][k] + g[k][j]);
 }
 
+void floyd_with_path(int **g, int n) {
+    int **next = new int*[n];
+    for (int i = 0; i < n; i++)
+        next[i] = new int[n];
+    for (int k = 0; k < n; k++)         i
+        for (int i = 0; i < n; i++)     u
+            for (int j = 0; j < n; j++) v
+                if (g[i][k] + g[k][j] < g[i][j]) {
+                     g[i][j] = g[i][k] + g[k][j];
+                     next[i][j] = next[i][k];
+                }
+    return next;
+}
+
 void readAdjMatOr(AdjMatrix &g) {
     int n;
     cin >> n;
