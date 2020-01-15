@@ -18,7 +18,7 @@ vector<int> djkstra(graph g, int s, vector<int> prev = {})
  
         for (int j = 0; j < g[v].size(); j++) {
             int to = g[v][j].first;
-            int len = g[v][j].second;
+            int wg = g[v][j].second;
             if (d[v] + wg < d[to]) {
                 d[to] = d[v] + wg;
                 if (prev.size())
