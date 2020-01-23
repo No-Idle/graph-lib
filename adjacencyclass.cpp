@@ -1,3 +1,13 @@
+/*
+*
+*
+*
+WARNING:
+some functions are not tested yet!
+*
+*
+*
+*/
 #include<bits/stdc++.h>
 
 using namespace std;
