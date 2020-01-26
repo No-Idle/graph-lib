@@ -9,3 +9,6 @@ Olympics library for work with graphs
 ## Authors
    * Alex Lelchuk
    * Leonid Danilevich
+
+## Also
+   * There is a fork https://github.com/GitProger/graph-lib, some functions don't match
