@@ -113,13 +113,13 @@ vector<int> ans;
 void ts_dfs(int v) {
     used[v] = GRAY;
     for (auto u : g[v]) {
-        if (g[u] == 1)
+        if (used[u] == 1)
             throw std::exception("Graph with cycles!");
-        if (g[u] == 0)
+        if (used[u] == 0)
             ts_dfs(u);
     }
     used[v] = BLACK;
-    ans.push_bach(v);
+    ans.push_back(v);
 }
 
 void topsort() {
