@@ -1,9 +1,9 @@
 typedef vector<vector<pair<int, int>>> graph;
 constexpr int INF = INT_MAX;
 
-vector<int> djkstra(graph g, int s, vector<int> prev = {})
+vector<int> djkstra(graph &g, int s, vector<int> &prev)
 {
-    int n = d.size();
+    int n = g.size();
     vector<int> d(n, INF);    
     vector<bool> used(n, false);
     d[s] = 0;
