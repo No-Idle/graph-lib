@@ -50,7 +50,7 @@ vector<int> djkstra_fast(vector<vector<pair<int, int>>> &g, int s, vector<int> &
                 unused.erase(unused.find({d[to], to}));
                 d[to] = d[v] + wg;
                 prev[to] = v;
-                unused.insert({d[to], wg});
+                unused.insert({d[to], to});
             }
         }
     }
