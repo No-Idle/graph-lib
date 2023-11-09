@@ -47,7 +47,9 @@ vector<int> djkstra_fast(vector<vector<pair<int, int>>> &g, int s, vector<int> &
         for (pair<int, int> &u : g[v]) {
             int to = u.first, wg = u.second;
             if (d[v] + wg < d[to]) {
-                unused.erase(unused.find({d[to], to}));
+                if (unused.find({d[to], to}) != unused.end()) {
+                    unused.erase(unused.find({d[to], to}));
+                }
                 d[to] = d[v] + wg;
                 prev[to] = v;
                 unused.insert({d[to], to});
